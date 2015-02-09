@@ -1,0 +1,44 @@
+<div class="container">
+
+
+
+  <div class="page-header">
+    <div class = "pull-right">
+      <%= link_to 'Edit', edit_location_path, class: 'btn btn-info' %>
+      <%= link_to 'Delete', @location, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %>
+    </div>
+    <h1><%= @location.name %></h1>
+  </div>
+
+  <ol class="breadcrumb">
+    <li><a href="/locations">Locations</a></li>
+    <li class="active"><%= @location.name %></li>
+  </ol>
+
+  <dl class="dl-horizontal">
+    <dt>Name</dt> <dd><%= @location.name %></dd>
+  </dl>
+
+
+  <table class="table">
+    <tr>
+      <th> Event Description </th>
+      <th> Event Date </th>
+      <th> Event Requires ID </th>
+    </tr>
+
+    <tbody>
+      <tr><% @location.events.each do |event| %>
+        <td><%= event.description %></td>
+        <td><%= event.date %></td>
+        <td><%= event.requires_id %></td>
+        <td class="text-right">
+          <%= link_to 'Edit', edit_location_event_path(@location, event), class: 'btn btn-info' %>
+          <%= link_to 'Delete', location_event_path(@location, event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %></td>
+        </tr>
+
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>

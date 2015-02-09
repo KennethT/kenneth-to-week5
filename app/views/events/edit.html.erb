@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="page-header">
+    <div class="pull-right">
+      <%= link_to 'Delete', location_event_path(@location, @event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %>
+    </div>
+    <h1>Editing Event</h1>
+  </div>
+
+  <ol class="breadcrumb">
+    <li><%= link_to 'Events', location_event_path(@location, @event) %></li>
+    <li><%= link_to @event.description, location_event_path %></li>
+  </ol>
+
+  <%= render 'form' %>
+</div>

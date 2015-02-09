@@ -1,0 +1,23 @@
+<%= form_for [@location, @event] do |f| %>
+
+<div class="form_group">
+  <%= f.label :description, class: "control-label col-md-2" %>
+  <%= f.text_field :description, class: "col-md-4" %> <br>
+</div>
+<br>
+<div class="form_group">
+  <%= f.label :date, class: "control-label col-md-2" %>
+  <%= f.date_select :date, class: "col-md-4" %> <br>
+</div>
+<br>
+<div class="form_group">
+  <%= f.label :requires_id, class: "control-label col-md-2" %>
+  <%= f.check_box :requires_id, class: "col-md-4" %> <br>
+</div>
+<br>
+<div class="form-group">
+<%= f.submit class:"btn btn-primary col-md-offset-2"%>
+<%= link_to 'Cancel', location_events_path, class:"btn btn-default" %>
+</div>
+
+<% end %>

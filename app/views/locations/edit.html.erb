@@ -1,0 +1,13 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to 'Delete', @location, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'  %>
+  </div>
+  <h1>Editing Location</h1>
+</div>
+
+<ol class="breadcrumb">
+  <li><%= link_to 'Locations', location_path %></li>
+  <li><%= link_to @location.name, @location %></li>
+</ol>
+
+<%= render 'form' %>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GCampKennethTo</title>
+    <title>Week 5</title>
     <%= stylesheet_link_tag    'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -25,6 +25,7 @@
         <!--/.navbar-collapse -->
       </div>
     </nav>
+
     <div class="container">
         <div id="notice">
           <% if flash[:notice] %>
@@ -33,16 +34,17 @@
           <% end %>
         </div>
         </div>
+<br>
+        <%= yield %>
+
     <div class="container">
-      <%= yield %>
+
     <hr>
     <footer>
       <div class="row">
 
         <div class="col-md-6">
-          <a href="/about">Locations</a>
-          |
-          <a href="/terms">Events</a>
+          <a href="/locations">Locations</a>
         </div>
 
 
